@@ -265,3 +265,31 @@ const writeToFile = (fileName, data) => {
         });
     });
 };
+
+//function to initialize application
+function init()
+{
+  if (!fs.existsSync(dir))
+    {
+      fs.mkdirSync(dir);
+    }
+  promptUser();
+};
+              
+//function to generate HTML template and write it to index.html file
+function generateTemplate(employeeArr) 
+{
+  const pageHTML = generateHTML(employeeArr);
+  writeToFile(filepath,pageHTML)
+  .then(writemsg =>{
+    console.log('');
+    console.log("------------------------------------------------------------------------------");
+    console.log('HTML generated at location '+filepath+' at root of the project directory');
+    console.log("------------------------------------------------------------------------------");
+  })
+  .catch(err => {
+      console.log(err);
+  });
+};
+//Start execution
+init();
