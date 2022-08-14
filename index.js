@@ -16,7 +16,7 @@ const promptUser = () => {
     return inquirer.prompt([
       {
         type: 'input',
-        name: 'TeamMname',
+        name: 'TeamSoloMid',
         message: 'What is the team Manager\'s name? (Required) : ',
         validate: nameInput => {
           if (nameInput) {
@@ -29,7 +29,7 @@ const promptUser = () => {
       },
       {
         type: 'input',
-        name: 'TeamMid',
+        name: 'TeamDuoMid',
         message: 'What is the team Manager\'s id? (Required) : ',
         validate: tid => {
           if (tid) {
@@ -42,7 +42,7 @@ const promptUser = () => {
       },
       {
         type: 'input',
-        name: 'TeamMemail',
+        name: 'TeamTrioMid',
         message: 'What is the team Manager\'s email id (Required) : ',
         validate: temailid => {
           if (temailid) 
@@ -66,7 +66,7 @@ const promptUser = () => {
 
       {
         type: 'input',
-        name: 'TeamMno',
+        name: 'TeamQuadraMid',
         message: 'What is the team Manager\'s number (Required/10 digit) : ',
         validate: tno => 
         {
@@ -89,8 +89,8 @@ const promptUser = () => {
         }
       }
     ])
-    .then(({TeamMname,TeamMid,TeamMemail,TeamMno}) => {
-        const manager = new Manager(TeamMname,TeamMid,TeamMemail,TeamMno);
+    .then(({TeamSoloMid,TeamDuoMid,TeamTrioMid,TeamQuadraMid}) => {
+        const manager = new Manager(TeamSoloMid,TeamDuoMid,TeamTrioMid,TeamQuadraMid);
         let role = manager.getRole();
         let empname = manager.getName();
         let empid = manager.getId();
