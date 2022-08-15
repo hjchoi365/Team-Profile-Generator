@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+  }
+
+header {
+    background-color: rgb(72, 72, 107);
+    color: white;
+    top: 0;
+    text-align: center;
+    height: 60px;
+}
+
+.container{
+    width: 50%;
+    margin-top: 30px;    
+}
+.card{
+  margin: 0 5px 20px 0;
+  border: 1px solid #272f32;
+  border-radius: 0.3rem;
+  width : 30%;  
+}
+
+.card-header{
+  font-size: 20px;
+}
+
+.card-text{
+  font-size: 14px;
+}
